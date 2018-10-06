@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 mongoose.connect('mongodb://test:1a2d3h4t@ds123753.mlab.com:23753/taxidb');
 mongoose.Promise = global.Promise; // Overriding mongoose promise because its deprecated
 
+console.log(process.env.MONGODB_URI);
 app.use(express.static('public'));
 
 app.use(bodyParser.json());
