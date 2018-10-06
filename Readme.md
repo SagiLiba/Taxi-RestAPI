@@ -1,10 +1,5 @@
 # Taxi Rest API
 
-<<<<<<< HEAD
-View the project live at: http://www.sagiliba.com/taxi
-
-Checkout my other projects: http://www.sagiliba.com
-=======
 View the project live at: https://taxi-rest-api.herokuapp.com/
 
 Checkout my other projects: http://www.sagiliba.com
@@ -15,4 +10,3 @@ Here I've built a simple Rest API which retrieves available taxi drivers based o
 I've also implemented CRUD actions and built a simple frontend.
 View the project live at the link above,
 press on the Mock Data + Find a Driver buttons to see the results.
->>>>>>> 14816bb633215c5e1494d9c6e0fdf4c883939a50
