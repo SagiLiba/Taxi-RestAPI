@@ -12,13 +12,15 @@
     <script>
     $(document).ready(function(){
 
-        getDriversData(51,50);
-
         var windowWidth = window.innerWidth;
         var itemClass = "item";
         if ( windowWidth < 770){
             $("#homepage").css("width","80%");
-            itemClass = "smallItem";
+            if ( windowWidth > 420){
+                itemClass = "mediumItem";
+            } else {
+                itemClass = "smallItem";
+            }
         } else {
             $("#homepage").css("width","50%");
         }

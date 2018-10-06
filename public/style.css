@@ -36,7 +36,9 @@ body{
     font-size: 11px;
 }
 
-
+.mediumItem {
+    font-size: 13px;
+}
 #homepage{
     width:80%;
     margin: 20px auto;
