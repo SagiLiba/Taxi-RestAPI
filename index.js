@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose'); // allows connection to mongodb
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Connect to monogodb - Creates it if it does not exists
 mongoose.connect(process.env.MONGODB_URI ||'mongodb://test:1a2d3h4t@ds123753.mlab.com:23753/taxidb');
@@ -20,6 +20,6 @@ app.use(function(err,req,res,next){
 });
 
 // Listen for requests
-app.listen(process.env.port || port,function(){
-    console.log('Listening for requests on port: ' + process.env.port || port);
+app.listen(port,function(){
+    console.log('Listening for requests on port: ' + port);
 });
