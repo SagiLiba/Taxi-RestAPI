@@ -1,18 +1,18 @@
 body{
     font-family: Raleway;
     color: #555;
-    background: #52bfff;
+    background-color: #52bfff !important;
     margin: 10px 30px;
 }
 
 #mockdata{
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .center {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+    float: none;
+    margin: 0 auto;
 } 
 
 .mock{
@@ -26,18 +26,27 @@ body{
     cursor: pointer;
 }
 
+.item {
+    font-size: 14px;
+}
+
+.smallItem {
+    font-size: 11px;
+}
+
+
 #homepage{
-    max-width: 700px;
+    width:80%;
     margin: 20px auto;
     padding: 10px 20px;
-    background: #fdfdfd;
+    background: #fdfdfd !important;
     border-radius: 4px;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 }
 
 input[type="text"]{
     display: block;
-    width: 300px;
+    width: 100%;
     margin: 20px 0;
     padding: 10px;
     border-radius: 4px;
@@ -51,7 +60,8 @@ label{
 .title{
     color: #fff;
     text-align: center;
-    font-size: 48px;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 #homepage h1{
@@ -93,7 +103,7 @@ li{
 
 span{
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 span.dist{

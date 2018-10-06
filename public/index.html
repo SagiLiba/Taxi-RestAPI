@@ -6,9 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="./style.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <script>
     $(document).ready(function(){
+
+        getDriversData(51,50);
+
+        var windowWidth = window.innerWidth;
+        var itemClass = "item";
+        if ( windowWidth < 770){
+            $("#homepage").css("width","80%");
+            itemClass = "smallItem";
+        } else {
+            $("#homepage").css("width","50%");
+        }
 
         $("#searchForm").submit(function(){
             var lat = $("#lat").val();
@@ -39,11 +52,11 @@
             $.getJSON("/api/drivers/?lng="+lng+"&lat="+lat, function( data ) {
                 $("#availableUbers").html("");
                 if ( data.length == 0){
-                    var li = "<li style='text-align:center;'>No drivers available</li>";
+                    var li = "<li class='"+itemClass+"' style='text-align:center;'>No drivers available</li>";
                     $("#availableUbers").append(li);
                 } else {
                     for ( var i = 0; i < data.length;i++){
-                        var li = "<li>";
+                        var li = "<li class='"+itemClass+"'>";
                             if (data[i].available){
                                 li += "<span class='true'></span>";
                             } else {
@@ -58,7 +71,7 @@
                 }
             }).fail(function(){
                 $("#availableUbers").html("");
-                var li = "<li style='text-align:center;'>Invalid location</li>";
+                var li = "<li class='"+itemClass+"' style='text-align:center;'>Invalid location</li>";
                 $("#availableUbers").append(li);
             });
         }
@@ -67,26 +80,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h3 class="title">Taxi - Rest API</h3>
-    <div id="mockdata" class="center">
+    <h1 class="text-center title">Taxi - Rest API</h3>
+    <div id="mockdata" style="width:300px; margin:auto;">
         Mock Data:
         <span class="mock" value="1">1</span>
         <span class="mock" value="2">2</span>
         <span class="mock" value="3">3</span>
-    </div>
+    </div> 
+
     <div id="homepage">
-        <h1>Call a driver in your area!</h1>
-        <div id="ninjas"></div>
+        <h2 class="text-center">Call a driver in your area!</h2>
         <form id="searchForm">
-            <div style="float: left;margin-left:15px;">
+            <div class="row">
+            <div class="col-md-6">
                 Enter Latitude:
                 <input type="text" id="lat" placeholder="latitude" required/>
             </div>
-            <div style="float: right;margin-right:15px;">
+            <div class="col-md-6">
                 Enter Longitude:
                 <input type="text" id="lng" placeholder="longitude" required/>
             </div>
-            <input type="submit" value="Find A Driver" />
+            </div>
+            <input type="submit" style="width: 100%;" value="Find A Driver" />
         </form>
         <ul id="availableUbers">
         </ul>
