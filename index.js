@@ -6,10 +6,9 @@ const mongoose = require('mongoose'); // allows connection to mongodb
 const port = process.env.PORT || 3000;
 
 // Connect to monogodb - Creates it if it does not exists
-mongoose.connect('mongodb://test:1a2d3h4t@ds123753.mlab.com:23753/taxidb');
+mongoose.connect( process.env.MONGODB_URI );
 mongoose.Promise = global.Promise; // Overriding mongoose promise because its deprecated
 
-console.log(process.env.MONGODB_URI);
 app.use(express.static('public'));
 
 app.use(bodyParser.json());
@@ -23,4 +22,5 @@ app.use(function(err,req,res,next){
 // Listen for requests
 app.listen(port,function(){
     console.log('Listening for requests on port: ' + port);
+    console.log("ENV_MONGO: "+ process.env.MONGODB_URI );
 });
