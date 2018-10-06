@@ -6,7 +6,7 @@ const mongoose = require('mongoose'); // allows connection to mongodb
 const port = 3000;
 
 // Connect to monogodb - Creates it if it does not exists
-mongoose.connect('mongodb://localhost/taxidb');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://test:1a2d3h4t@ds123753.mlab.com:23753/taxidb');
 mongoose.Promise = global.Promise; // Overriding mongoose promise because its deprecated
 
 app.use(express.static('public'));
