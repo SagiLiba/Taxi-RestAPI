@@ -1,5 +1,5 @@
 {
-  "name": "RESTAPI",
+  "name": "Taxi-RestAPI",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SagiLiba/RESTAPI.git"
+    "url": "git+https://github.com/SagiLiba/Taxi-RestAPI.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SagiLiba/RESTAPI/issues"
+    "url": "https://github.com/SagiLiba/Taxi-RestAPI/issues"
   },
-  "homepage": "https://github.com/SagiLiba/RESTAPI#readme",
+  "homepage": "https://github.com/SagiLiba/Taxi-RestAPI#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
